@@ -1,0 +1,108 @@
+.app {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  // align-items: center;
+  justify-content: center;
+  background-color: #282833;
+  min-height: 100vh;
+  // background-image: url("../assets/images/peakpx.jpg");
+  background-size: contain;
+  background-clip: padding-box;
+  background-position: center;
+  background-repeat: no-repeat;
+  // filter: blur(8px);
+  .bg-image {
+    background-image: url("../assets/images/peakpx.jpg");
+    filter: blur(8px);
+    -webkit-filter: blur(1px);
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .vending-machine {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/opacity/see-through */
+
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+
+    .step {
+      margin: 20px 0;
+      .money,
+      .food {
+        margin-top: 8px;
+        color: #e3e3e3;
+        font-size: 12px;
+      }
+      h1 {
+        color: #e3e3e3;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        text-align: center;
+        margin-bottom: 12px;
+      }
+      .money-container,
+      .food-container {
+        // border: 2px solid #e3e3e3;
+        border-radius: 4px;
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 20px 0px;
+      }
+      .money-container img,
+      .food-container img {
+        padding: 4px;
+        object-fit: contain;
+        width: 60px;
+        height: 48px;
+        transition: all 200ms;
+        cursor: pointer;
+        &:hover {
+          filter: drop-shadow(0px 0px 8px #e3e3e3);
+          transform: scale(1.1);
+        }
+
+        &.selectedMoney,
+        &.selectedFood {
+          filter: drop-shadow(0px 0px 8px #e3e3e3);
+          transform: scale(1.1);
+        }
+      }
+    }
+    button {
+      margin: 0;
+      width: 384px;
+    }
+  }
+  .receipt {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+    .text-stock,
+    .text-change,
+    .text-message {
+      margin-top: 8px;
+      color: #e3e3e3;
+      font-size: 12px;
+    }
+  }
+}
